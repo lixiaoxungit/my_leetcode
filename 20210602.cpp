@@ -31,7 +31,8 @@ using namespace std;
 #include <unordered_map>
 bool checkSubarraySum(vector<int>& nums, int k) {
     unordered_map<int,int> presums; // key是余数，value是该余数第一次出现的下标
-    presums[0] = -1; // 考虑在数组最前面的特殊情况，注意前缀和相减表示的是i+1到j的和
+    presums[0] = -1; // 考虑在数组最前面的特殊情况，因为前缀和相减是i+1到j的求和,比如0到2的求和应该是presum[2]-presum[-1]
+    // presum[-1] = 0 
     int n = nums.size();
     int resident = 0; // 记录余数
     for (int i = 0; i < n; ++i) {
