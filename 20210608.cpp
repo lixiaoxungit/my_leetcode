@@ -9,7 +9,7 @@ using namespace std;
 
 // 将问题转化为求数组不超过sum/2的最大值，结果即为sum-2*该值
 // 背包问题，价值和容量都是sum/2
-// 对于这种价值和容量相同的情况，其实可以直接用一个bool数组，然后从sum/2开始递减找到第一个为true的
+// 对于这种价值和容量相同的情况，其实可以直接用一个bool数组(表示背包是否能够被装满)，然后从sum/2开始递减找到第一个为true的
 int lastStoneWeightII(vector<int>& stones) {
     int sum = 0;
     for(auto& i : stones) sum += i;
